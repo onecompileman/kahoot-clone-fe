@@ -1,0 +1,21 @@
+@import "config";
+
+.#{$style-prefix}-sidebar {
+  display: flex;
+  width: 250px;
+  background-color: $white !important;
+  height: 100vh;
+
+  li {
+    a {
+      color: $foreground;
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    a.active {
+        background-color: $primary;
+    }
+  }
+}

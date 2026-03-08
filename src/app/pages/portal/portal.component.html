@@ -1,0 +1,14 @@
+<div class="khc-portal">
+  <app-navbar [isMobile]="isMobile"></app-navbar>
+  <div class="khc-portal__content">
+    @if (!isMobile) {
+    <div class="khc-portal__sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    }
+
+    <div class="khc-portal__page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

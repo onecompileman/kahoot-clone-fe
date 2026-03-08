@@ -1,0 +1,62 @@
+<nav class="khc-navbar navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <div class="khc-navbar__brand-icon me-3">kh</div>
+
+      Kahoot Clone
+    </a>
+
+    <!-- Toggler (hamburger menu for mobile) -->
+    @if (isMobile) {
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- ms-auto pushes links to the right -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">My Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Quiz Reports</a>
+        </li>
+        <hr class="m-0">
+        <li class="nav-item">
+          <a class="nav-link">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Logout</a>
+        </li>
+      </ul>
+    </div>
+    } @else {
+    <div class="btn-group" dropdown placement="bottom" container="body">
+      <div id="button-animated" dropdownToggle type="button" aria-controls="dropdown-animated">
+        <div class="khc-navbar__user-profile">SV</div>
+      </div>
+      <ul
+        id="dropdown-animated"
+        *dropdownMenu
+        class="dropdown-menu dropdown-menu-end"
+        role="menu"
+        aria-labelledby="button-animated"
+      >
+        <li role="menuitem"><a class="dropdown-item" href="#">Profile</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Logout</a></li>
+      </ul>
+    </div>
+    }
+  </div>
+</nav>

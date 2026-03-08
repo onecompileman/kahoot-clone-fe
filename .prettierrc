@@ -1,0 +1,34 @@
+{
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "trailingComma": "es5",
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "ignore",
+    "overrides": [
+      {
+        "files": "*.scss",
+        "options": {
+          "singleQuote": false
+        }
+      },
+      {
+        "files": "*.ts",
+        "options": {
+          "parser": "typescript"
+        }
+      },
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  }
+  

@@ -1,0 +1,32 @@
+@import "config";
+
+.navbar {
+  background-color: $white !important;
+  box-shadow: 0 3px 2px rgb(0, 0, 0);
+}
+
+.#{$style-prefix}-navbar {
+  &__user-profile {
+    background-color: $pink;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid black;
+  }
+
+  &__brand-icon {
+    height: 36px;
+    width: 36px;
+    background-color: $primary;
+    border-color: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0);
+  }
+}
+

@@ -1,0 +1,6 @@
+@import 'config';
+
+.#{$style-prefix}-app {
+    background-color: $bg1;
+    height: 100vh;
+}

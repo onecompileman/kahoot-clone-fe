@@ -1,0 +1,18 @@
+@import "config";
+
+.#{$style-prefix}-portal {
+
+    &__content {
+        display: flex;
+    }
+
+    &__sidebar {
+        max-width: 250px;
+    }
+
+    &__page-content {
+        padding: 25px;
+        flex: auto;
+    }
+  
+}
