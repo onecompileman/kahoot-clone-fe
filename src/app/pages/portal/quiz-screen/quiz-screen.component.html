@@ -1,0 +1,24 @@
+<div class="khc-quiz-screen">
+  @switch (quizScreenState) {
+    @case (quizScreenStateEnum.WAITING_FOR_PLAYERS) {
+      <app-join-screen
+        (startQuizEvent)="quizScreenState = quizScreenStateEnum.STARTING_QUIZ"
+      ></app-join-screen>
+    }
+    @case (quizScreenStateEnum.STARTING_QUIZ) {
+      <app-starting-quiz class="w-100"></app-starting-quiz>
+    }
+    @case (quizScreenStateEnum.SHOWING_QUESTION) {
+      <app-question-screen class="w-100"></app-question-screen>
+    }
+    @case (quizScreenStateEnum.SHOWING_ANSWER) {
+      <app-question-answer class="w-100"></app-question-answer>
+    }
+    @case (quizScreenStateEnum.SHOWING_SCORES) {
+      <app-scoreboard class="w-100"></app-scoreboard>
+    }
+    @case (quizScreenStateEnum.QUIZ_OVER) {
+      <!-- <app-quiz-over-screen></app-quiz-over-screen> -->
+    }
+  }
+</div>

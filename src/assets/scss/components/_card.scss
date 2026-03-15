@@ -1,0 +1,8 @@
+@import "../config.scss";
+
+.#{$style-prefix}-card {
+  padding: 25px;
+  background-color: $white;
+  box-shadow: 4px 4px 4px black;
+  display: flex;
+}

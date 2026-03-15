@@ -1,0 +1,30 @@
+<div class="khc-footer">
+  <div class="khc-footer__stats-info">
+    <span>Stephen</span>
+    <div><b>0 points</b></div>
+  </div>
+
+  <div class="btn-group" dropdown [placement]="'top'">
+    <div id="button-animated" dropdownToggle type="button" aria-controls="dropdown-animated">
+      <div class="khc-footer__react">
+        <i class="fa-regular fa-face-surprise"></i>
+        <small>React</small>
+      </div>
+    </div>
+    <ul
+      id="dropdown-animated"
+      *dropdownMenu
+      class="dropdown-menu"
+      role="menu"
+      aria-labelledby="button-animated"
+    >
+      <li role="menuitem"><i class="fa fa-solid fa-heart text-danger"></i></li>
+      <li role="menuitem">
+        <i class="fa fa-solid fa-thumbs-up text-primary"></i>
+      </li>
+      <li role="menuitem">
+        <i class="fa-solid fa-face-surprise text-warning"></i>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -4,7 +4,8 @@
   height: fit-content !important;
   border-radius: 0;
   box-shadow: 2px 3px 2px rgb(0, 0, 0);
-  min-width: 140px;
+  // min-width: 140px;
+  text-decoration: none !important;
 }
 
 .btn-primary {
@@ -27,8 +28,8 @@
   transition: 0.2s linear;
 
   &:hover {
-    background-color: $primary !important;
-    color: $foreground;
+    background-color: $info !important;
+    color: $white;
   }
 }
 

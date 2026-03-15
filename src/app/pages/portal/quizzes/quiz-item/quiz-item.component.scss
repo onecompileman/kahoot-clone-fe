@@ -1,12 +1,12 @@
 @import "config";
 
 .#{$style-prefix}-quiz-item {
-  height: 380px;
+  height: 280px;
   width: 100%;
-  min-width: 320px;
+  min-width: 280px;
   border-radius: 0px;
   background-color: $white;
-  box-shadow: 5px 3px 2px rgb(0, 0, 0) !important;
+  box-shadow: 3px 3px 2px rgb(0, 0, 0) !important;
 
   &--teal {
     background-color: $teal;
@@ -20,19 +20,19 @@
     flex: auto;
   }
 
-  .card-img-top {
-    min-height: 160px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  // .card-img-top {
+  //   min-height: 160px;
+  //   background-size: cover;
+  //   background-position: center;
+  //   position: relative;
     
-    &::after {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0,0,0,0.2);
-    }
-  }
+  //   &::after {
+  //     position: absolute;
+  //     height: 100%;
+  //     width: 100%;
+  //     background-color: rgba(0,0,0,0.2);
+  //   }
+  // }
 
   &__status {
     height: 20px;
@@ -45,7 +45,7 @@
   }
 
   .card-title {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   &-delete {

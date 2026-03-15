@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PortalComponent } from './portal.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { AddQuizComponent } from './quizzes/add-quiz/add-quiz.component';
+import { StartQuizComponent } from './start-quiz/start-quiz.component';
+import { QuizScreenComponent } from './quiz-screen/quiz-screen.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,14 @@ const routes: Routes = [
         path: 'add-quiz',
         component: AddQuizComponent,
       },
+      {
+        path: 'start-quiz/:quizId',
+        component: StartQuizComponent,
+      },
+      {
+        path: 'quiz-screen',
+        component: QuizScreenComponent,
+      }
     ],
   },
 ];

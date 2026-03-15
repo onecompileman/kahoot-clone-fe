@@ -1,8 +1,10 @@
 @import "config";
 
 .#{$style-prefix}-add-quiz {
-  height: 100vh;
+  min-height: calc(100vh - 62px);
   width: 100%;
+  display: flex;
+  flex-direction: column;
   &__header {
     display: flex;
     justify-content: space-between;
@@ -23,6 +25,11 @@
     }
   }
 
+  &__content {
+    display: flex;
+    flex: auto;
+  }
+
   &__question-list {
     background-color: $white;
     height: 100%;
@@ -35,6 +42,8 @@
     text-align: center;
     box-shadow: 5px 0 3px black;
     z-index: 10;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   &__question-item {
@@ -97,15 +106,32 @@
 
   &__question-form {
     flex: auto;
-    background-color: $violet1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
 
     &-title-input {
       width: 80%;
       min-width: 300px;
+    }
+
+    &-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: $violet1;
+      flex: auto;
+    }
+
+    &-config {
+      min-width: 200px;
+      max-width: 300px;
+
+      width: 20%;
+      padding: 15px;
+
+      &-title {
+        font-size: 18px;
+      }
     }
   }
 
@@ -140,41 +166,8 @@
     margin-top: 100px;
   }
 
-  &__question-option-item {
-    height: 64px;
-    width: 48%;
-    min-width: 300px;
-    margin-top: 15px;
-
-    background-color: $white;
-    box-shadow: 4px 4px 4px black;
-
+  &__question-form {
+    flex: auto;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-left: 20px solid;
-
-    &:nth-child(1) {
-      border-color: $teal;
-    }
-    &:nth-child(2) {
-      border-color: $pink;
-    }
-    &:nth-child(3) {
-      border-color: $info;
-    }
-    &:nth-child(4) {
-      border-color: $danger;
-    }
-
-    input {
-      border: none;
-
-      &:focus {
-        outline: none;
-        border: none;
-      }
-    }
   }
 }

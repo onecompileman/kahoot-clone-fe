@@ -1,0 +1,106 @@
+<div class="khc-game-screen">
+  @switch (gameState) {
+    @case (GameState.LOBBY) {
+      <h1>Stephen</h1>
+      <p>You're in! See your nickname on the game screen?</p>
+    }
+    @case (GameState.IN_PROGRESS) {
+      <div class="khc-game-screen__question-no">1/2</div>
+
+      <div
+        class="w-100 d-flex flex-column align-items-center animate__animated animate__slideInRight"
+      >
+        <div class="khc-game-screen__question-text">What is the capital of France?</div>
+
+        <div
+          class="khc-game-screen__options container w-100 d-flex flex-wrap justify-content-center mt-4"
+        >
+          <div class="khc-game-screen__question-option">
+            <span class="khc-game-screen__option-text">Paris</span>
+          </div>
+          <div class="khc-game-screen__question-option">
+            <span class="khc-game-screen__option-text">London</span>
+          </div>
+          <div class="khc-game-screen__question-option">
+            <span class="khc-game-screen__option-text">Berlin</span>
+          </div>
+          <div class="khc-game-screen__question-option">
+            <span class="khc-game-screen__option-text">Madrid</span>
+          </div>
+        </div>
+      </div>
+    }
+    @case (GameState.CORRECT_ANSWER) {
+      <div class="d-flex flex-column align-items-center animate__animated animate__bounceIn">
+        <h1>Correct!</h1>
+        <img
+          src="assets/icons/icons8-correct-200.png"
+          height="128"
+          alt="Correct icon"
+          class="mt-3"
+        />
+        <p>You're on the podium</p>
+      </div>
+    }
+    @case (GameState.IN_INCORRECT_ANSWER) {
+      <div class="d-flex flex-column align-items-center animate__animated animate__bounceIn">
+        <h1>Incorrect!</h1>
+        <img
+          src="assets/icons/icons8-wrong-200.png"
+          height="128"
+          alt="Incorrect icon"
+          class="mt-3"
+        />
+        <p class="mt-3">The correct answer is: A. Paris</p>
+        <p>You're on the podium</p>
+      </div>
+    }
+    @case (GameState.SHOWING_SCORES) {
+      <div
+        class="w-100 d-flex flex-column align-items-center animate__animated animate__slideInRight"
+      >
+      <div class="d-flex justify-content-between align-items-center w-100 mt-4">
+        <button class="close">
+            x
+        </button>
+        <h1>Podium</h1>
+        <div></div>
+      </div>
+      
+        <div class="khc-game-screen__podium-container">
+          <div class="khc-game-screen__podium">
+            <h1>2nd</h1>
+            <span class="khc-game-screen__podium-name">Player 1</span>
+            <span class="khc-game-screen__podium-score">100 pts</span>
+          </div>
+          <div class="khc-game-screen__podium">
+            <h1>1st</h1>
+            <span class="khc-game-screen__podium-name">Player 2</span>
+            <span class="khc-game-screen__podium-score">80 pts</span>
+          </div>
+          <div class="khc-game-screen__podium">
+            <h1>3rd</h1>
+            <span class="khc-game-screen__podium-name">Player 3</span>
+            <span class="khc-game-screen__podium-score">60 pts</span>
+          </div>
+        </div>
+
+        <div class="khc-game-screen__user-rank">
+          <span class="khc-game__rank">5</span>
+          <span class="khc-game-screen__user-rank-name">Player 4</span>
+          <span class="khc-game-screen__user-rank-score">50 pts</span>
+        </div>
+      </div>
+    }
+    @case (GameState.GAME_OVER) {
+      <h1>Game Over!</h1>
+      <p>Thanks for playing!</p>
+    }
+  }
+
+  @if (gameState !== GameState.SHOWING_SCORES) {
+    <div class="khc-game-screen__footer">
+      <app-footer></app-footer>
+    </div>
+  }
+</div>

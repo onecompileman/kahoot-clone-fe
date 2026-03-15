@@ -1,0 +1,126 @@
+@import "config";
+
+.#{$style-prefix}-add-quiz {
+    display: flex;
+
+  &__question-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: $bg1;
+
+    &-title-input {
+      width: 80%;
+      min-width: 300px;
+    }
+
+    &-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: $violet1;
+      flex: auto;
+    }
+
+    &-config {
+      min-width: 200px;
+      width: 20%;
+      padding: 15px;
+
+      &-title {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__question-media {
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 4px black;
+    margin-top: 100px;
+
+    i.fa {
+      color: #666;
+      font-size: 36px;
+    }
+
+    i {
+      &:last-child {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__question-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+
+  &__question-option-item {
+    height: 64px;
+    width: 48%;
+    min-width: 300px;
+    margin-top: 15px;
+
+    background-color: $white;
+    box-shadow: 4px 4px 4px black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-left: 20px solid;
+    position: relative;
+
+    &--correct {
+      &::before {
+        content: "Correct";
+        padding: 5px 25px;
+        background-color: $teal;
+        color: white;
+        font-size: 14px;
+        position: absolute;
+        top: -32px;
+        left: -20px;
+      }
+    }
+
+    div {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    &:nth-child(1) {
+      border-color: $teal;
+    }
+    &:nth-child(2) {
+      border-color: $pink;
+    }
+    &:nth-child(3) {
+      border-color: $info;
+    }
+    &:nth-child(4) {
+      border-color: $danger;
+    }
+
+    input {
+      border: none;
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+
+
+}

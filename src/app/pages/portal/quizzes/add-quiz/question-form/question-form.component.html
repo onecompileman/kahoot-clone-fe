@@ -1,0 +1,73 @@
+<div class="khc-add-quiz__question-form">
+     <div class="khc-add-quiz__question-form-main">
+        <input
+          type="text"
+          class="khc-add-quiz__question-form-title-input"
+          placeholder="Type question"
+        />
+        <div class="khc-add-quiz__question-media">
+          <i class="fa fa-regular fa-image"></i>
+
+          <span class="mt-3">Click to add media</span>
+          <i class="text-muted">Max file size 2mb, accepted (.jpg/.png/.gif)</i>
+        </div>
+
+        <div class="khc-add-quiz__question-options">
+          <div
+            class="khc-add-quiz__question-option-item khc-add-quiz__question-option-item--correct"
+          >
+            <input type="text" placeholder="Add answer 1" />
+            <div>
+              <i class="fa fa-regular fa-image"></i>
+            </div>
+          </div>
+          <div class="khc-add-quiz__question-option-item">
+            <input type="text" placeholder="Add answer 2" />
+            <div>
+              <i class="fa fa-regular fa-image"></i>
+            </div>
+          </div>
+          <div class="khc-add-quiz__question-option-item">
+            <input type="text" placeholder="Add answer 3" />
+            <div>
+              <i class="fa fa-regular fa-image"></i>
+            </div>
+          </div>
+          <div class="khc-add-quiz__question-option-item">
+            <input type="text" placeholder="Add answer 4" />
+            <div>
+              <i class="fa fa-regular fa-image text-muted"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="false" class="khc-add-quiz__question-form-config">
+        <span class="khc-add-quiz__question-form-config-title">Question properties</span>
+        <hr />
+        <div class="row">
+          <div class="d-flex flex-column">
+            <label for="">Time limit</label>
+            <select name="" id="">
+              <option value="">20 seconds</option>
+            </select>
+          </div>
+
+          <div class="d-flex flex-column mt-3">
+            <label for="">Points</label>
+            <select name="" id="">
+              <option value="">Standard</option>
+            </select>
+          </div>
+
+          <div class="d-flex flex-column mt-3">
+            <label for="">Correct Answer</label>
+            <select id="colorSelect">
+              <option value="red" style="color: #47daca">Teal</option>
+              <option value="green" style="color: #f173a3">Pink</option>
+              <option value="blue" style="color: #006edd">Blue</option>
+              <option value="orange" style="color: #e62019">Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+</div>

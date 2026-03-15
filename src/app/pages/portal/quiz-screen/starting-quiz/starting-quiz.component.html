@@ -1,0 +1,29 @@
+<div class="khc-start">
+  @switch (startTimerCountdownState) {
+    @case ('STARTING_QUIZ') {
+      <div class="khc-card animate__animated animate__slideInDown">
+        <h2>Starting Quiz</h2>
+      </div>
+    }
+    @case ('GETTING_READY') {
+      <div class="khc-card animate__animated animate__slideInDown">
+        <h2>Get Ready!</h2>
+      </div>
+    }
+    @case ('3') {
+      <div class="khc-card animate__animated animate__slideInDown">
+        <h2>In 3!</h2>
+      </div>
+    }
+    @case ('2') {
+      <div class="khc-card animate__animated animate__slideInDown">
+        <h2>2!</h2>
+      </div>
+    }
+    @case ('1') {
+      <div class="khc-card animate__animated animate__slideInDown">
+        <h2>1!</h2>
+      </div>
+    }
+  }
+</div>

@@ -1,0 +1,27 @@
+<div class="khc-join-game">
+  <a [routerLink]="['/']" class="btn btn-secondary khc-join-game__back">Back</a>
+
+  @if (!isValidCode) {
+    <div class="khc-join-game__game-card">
+      <span class="khc-join-game__game-card-title">Join a game</span>
+
+      <input
+        type="text"
+        placeholder="Enter game code"
+        class="mt-4 animate__animated animate__shakeX"
+      />
+
+      <span class="text-danger">Invalid game code!</span>
+
+      <button (click)="isValidCode = true" class="btn btn-info mt-4">Join</button>
+    </div>
+  } @else {
+    <div class="khc-join-game__game-card animate__animated animate__slideInRight">
+      <span class="khc-join-game__game-card-title">Enter your nickname</span>
+
+      <input type="text" placeholder="Your nickname" class="mt-4" />
+
+      <button (click)="joinGame()" class="btn btn-info mt-4">Start</button>
+    </div>
+  }
+</div>

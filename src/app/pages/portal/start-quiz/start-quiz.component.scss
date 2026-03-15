@@ -1,0 +1,37 @@
+@import "config";
+
+.#{$style-prefix}-start-quiz {
+    background-color: $violet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+
+    &__quiz-card {
+        background-color: $white;
+        box-shadow: 4px 4px 4px black;
+        padding: 25px;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 650px;
+
+        &-title {
+            font-size: 24px;
+        }
+
+        .badge {
+            font-size: 14px;
+            border-radius: 0;
+        }
+
+        select {
+            width: 100%;
+        }
+
+        button {
+            min-width: 200px;
+        }
+    }
+
+}

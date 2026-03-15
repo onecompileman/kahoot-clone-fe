@@ -1,0 +1,67 @@
+@import "config";
+
+.#{$style-prefix}-question-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  padding: 40px;
+
+  &__question-text {
+    font-size: 36px;
+    color: $white;
+  }
+
+  &__timer {
+    background-color: #fff;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    align-items: center;
+  }
+
+  &__question-option {
+    height: 10vh;
+    width: calc(50% - 20px);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+
+    @media (max-width: 800px) {
+      margin: 5px;
+      width: calc(50% - 10px);
+    }
+
+    background-color: $white;
+    box-shadow: 4px 4px 4px black;
+    position: relative;
+
+    div {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    &:nth-child(1) {
+      background-color: $teal;
+    }
+    &:nth-child(2) {
+      background-color: $pink;
+    }
+    &:nth-child(3) {
+      background-color: $info;
+    }
+    &:nth-child(4) {
+      background-color: $danger;
+    }
+  }
+}

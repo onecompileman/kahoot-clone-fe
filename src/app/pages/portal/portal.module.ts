@@ -9,6 +9,15 @@ import { QuizItemComponent } from './quizzes/quiz-item/quiz-item.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { AddQuizComponent } from './quizzes/add-quiz/add-quiz.component';
 import { QuizFormComponent } from './quizzes/add-quiz/quiz-form/quiz-form.component';
+import { QuestionFormComponent } from './quizzes/add-quiz/question-form/question-form.component';
+import { StartQuizComponent } from './start-quiz/start-quiz.component';
+import { QuizScreenComponent } from './quiz-screen/quiz-screen.component';
+import { JoinScreenComponent } from './quiz-screen/join-screen/join-screen.component';
+import { StartingQuizComponent } from './quiz-screen/starting-quiz/starting-quiz.component';
+import { QuestionScreenComponent } from './quiz-screen/question-screen/question-screen.component';
+import { QuestionAnswerComponent } from './quiz-screen/question-answer/question-answer.component';
+import { ScoreboardComponent } from './quiz-screen/scoreboard/scoreboard.component';
+import { QuizResultComponent } from './quiz-screen/quiz-result/quiz-result.component';
 
 
 @NgModule({
@@ -17,7 +26,8 @@ import { QuizFormComponent } from './quizzes/add-quiz/quiz-form/quiz-form.compon
     QuizItemComponent,
     QuizzesComponent,
     AddQuizComponent,
-    QuizFormComponent
+    QuizFormComponent, 
+    QuestionFormComponent, StartQuizComponent, QuizScreenComponent, JoinScreenComponent, StartingQuizComponent, QuestionScreenComponent, QuestionAnswerComponent, ScoreboardComponent, QuizResultComponent
   ],
   imports: [
     CommonModule,

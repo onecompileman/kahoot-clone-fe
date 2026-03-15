@@ -15,7 +15,6 @@ export const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('./pages/public/public.module').then((m) => m.PublicModule),
-        pathMatch: 'full'
       },
     ],
   },

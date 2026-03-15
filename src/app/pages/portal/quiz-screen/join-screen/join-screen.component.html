@@ -1,0 +1,32 @@
+<div class="d-flex flex-column w-100 align-items-center">
+     <p>
+    Join at
+    <b>www.kahootclone.com/join-game</b>
+  </p>
+  <div class="d-flex alig-items-center mt-4">
+    <div class="khc-quiz-screen__pin-card">
+      <span class="khc-quiz-screen__pin-card-title">Game PIN</span>
+      <span class="khc-quiz-screen__pin-card-pin">123 456</span>
+    </div>
+    <div id="qrCode" class="ms-4">
+      <canvas #qrCode></canvas>
+    </div>
+  </div>
+  <div class="d-flex container justify-content-end mt-4">
+    <button (click)="startQuiz()" class="btn btn-secondary">
+        Start Quiz
+    </button>
+  </div>
+  <h3 class="mt-5 text-white">Players joined</h3>
+  <div class="container d-flex flex-wrap mt-4 justify-content-center">
+    <div class="khc-quiz-screen__player-item m-3">
+        Stephen
+    </div>
+    <div class="khc-quiz-screen__player-item m-3">
+        Lebron
+    </div>
+    <div class="khc-quiz-screen__player-item m-3">
+        Dwight
+    </div>
+  </div>
+</div>
