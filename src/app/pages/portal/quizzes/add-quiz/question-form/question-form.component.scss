@@ -1,17 +1,23 @@
 @import "config";
 
 .#{$style-prefix}-add-quiz {
-    display: flex;
+  display: flex;
 
   &__question-form {
     width: 100%;
     height: 100%;
     display: flex;
     background-color: $bg1;
+    position: relative;
 
     &-title-input {
       width: 80%;
       min-width: 300px;
+      max-width: 1200px;
+
+      @media (max-width: 991px) {
+        width: 100%;
+      }
     }
 
     &-main {
@@ -27,16 +33,40 @@
       min-width: 200px;
       width: 20%;
       padding: 15px;
+      background-color: $bg1;
 
       &-title {
         font-size: 18px;
       }
+
+      &--floating {
+        position: absolute;
+        right: 16px;
+        top: 2px;
+        width: calc(100% - 32px);
+        max-width: 320px;
+        z-index: 1100;
+        box-shadow: 4px 4px 4px black;
+      }
     }
+  }
+
+  &__floating-config-btn {
+    position: absolute;
+    right: 16px;
+    top: 2px;
+    width: 42px;
+    height: 42px !important;
+    border-radius: 100%;
+    z-index: 1110;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__question-media {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     height: 300px;
     background-color: $white;
     display: flex;
@@ -56,6 +86,11 @@
         font-size: 12px;
       }
     }
+
+    @media (max-width: 991px) {
+      margin-top: 20px;
+      height: 160px;
+    }
   }
 
   &__question-options {
@@ -63,12 +98,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 100px;
+    max-width: 1200px;
   }
 
   &__question-option-item {
-    height: 64px;
+    height: 110px;
     width: 48%;
-    min-width: 300px;
+    min-width: 280px;
     margin-top: 15px;
 
     background-color: $white;
@@ -76,10 +112,15 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     border-left: 20px solid;
     position: relative;
+
+    @media (max-width: 991px) {
+      width: 100%;
+      height: 64px;
+      margin-top: 8px;
+    }
 
     &--correct {
       &::before {
@@ -114,6 +155,8 @@
 
     input {
       border: none;
+      min-width: unset;
+      //   width: calc(100% - 130px);
 
       &:focus {
         outline: none;
@@ -122,5 +165,21 @@
     }
   }
 
+  @media (max-width: 991px) {
+    &__question-form {
+      flex-direction: column;
 
+      &-config {
+        display: none;
+
+        &--floating {
+          display: block;
+        }
+      }
+    }
+
+    &__question-options {
+      margin-top: 8px;
+    }
+  }
 }

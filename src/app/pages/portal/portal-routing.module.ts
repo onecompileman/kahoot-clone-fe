@@ -5,6 +5,7 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
 import { AddQuizComponent } from './quizzes/add-quiz/add-quiz.component';
 import { StartQuizComponent } from './start-quiz/start-quiz.component';
 import { QuizScreenComponent } from './quiz-screen/quiz-screen.component';
+import { InitialResolver } from '../../core/resolvers/initial.resolver';
 
 const routes: Routes = [
   {
@@ -26,8 +27,11 @@ const routes: Routes = [
       {
         path: 'quiz-screen',
         component: QuizScreenComponent,
-      }
+      },
     ],
+    resolve: {
+      initialData: InitialResolver,
+    },
   },
 ];
 

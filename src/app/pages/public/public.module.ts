@@ -10,6 +10,7 @@ import { JoinGameComponent } from './join-game/join-game.component';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { FooterComponent } from './game-screen/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,12 +23,15 @@ import { FooterComponent } from './game-screen/footer/footer.component';
     RegisterComponent,
     JoinGameComponent,
     GameScreenComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     CommonModule,
     PortalRoutingModule,
-    BsDropdownModule
+    BsDropdownModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PublicModule { }

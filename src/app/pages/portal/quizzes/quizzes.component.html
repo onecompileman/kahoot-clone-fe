@@ -1,13 +1,26 @@
 <div class="khc-quizzes">
   <div class="container-lg mt-5">
-    <div class="d-flex flex-wrap justify-content-md-between justify-content-center gap-2 align-items-center flex-xs-column flex-row">
-      <h4>My Quizzes</h4>
-      <input type="search" placeholder="Type to search quiz" style="min-width: 280px;">
+    <div class="khc-quizzes__filter">
+      <div class="d-flex align-items-center">
+        <b class="text-primary">6</b>
+        <span>Published Quizzes</span>
+      </div>
+      <div class="d-flex align-items-center">
+        <b class="text-warning">2</b>
+        <span>Draft Quizzes</span>
+      </div>
+      <div class="d-flex align-items-center" style="border: none">
+        <b class="text-secondary">6</b>
+        <span>Archived Quizzes</span>
+      </div>
+      <input type="search" placeholder="Type to search quiz" style="min-width: 300px" />
       <a [routerLink]="['/portal/add-quiz']" class="btn btn-info">Add Quiz</a>
     </div>
-    <div class="d-flex flex-wrap justify-content-xs-center justify-content-start pt-5">
+  
+    <h4 class="mb-2 mt-4">My Quizzes</h4>
+    <div class="d-flex flex-wrap justify-content-xs-center justify-content-start pt-2">
       @for (item of [1, 2, 3, 4, 5, 6]; track $index) {
-        <div style="width: calc(25% - 1rem); min-width: 280px; margin: 0.5rem;">
+        <div style="width: calc(25% - 1rem); min-width: 280px; margin: 0.5rem">
           <app-quiz-item [imageNo]="($index % 4) + 1"></app-quiz-item>
         </div>
       }

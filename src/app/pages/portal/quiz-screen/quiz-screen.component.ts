@@ -9,7 +9,7 @@ import { QuizScreenState } from '../../../shared/enums/quiz-screen-state.enum';
 })
 export class QuizScreenComponent implements AfterViewInit {
 
-  quizScreenState = QuizScreenState.SHOWING_SCORES;
+  quizScreenState = QuizScreenState.QUIZ_OVER;
   quizScreenStateEnum = QuizScreenState;
 
   ngAfterViewInit(): void {

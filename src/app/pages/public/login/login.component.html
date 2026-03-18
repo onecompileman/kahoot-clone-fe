@@ -1,27 +1,32 @@
 <div class="khc-login">
-  <a [routerLink]="['/']" class="btn btn-secondary khc-register__back">Back</a>
-
-  <div class="khc-login__login-card">
+  <a [routerLink]="['/']" class="btn btn-secondary khc-login__back">Back</a>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="khc-login__login-card">
     <span class="khc-login__login-card-title">Login to your account</span>
 
     <div class="d-flex mt-4">
-      <button class="btn btn-secondary w-100">
+      <button type="button" class="btn btn-secondary w-100" (click)="loginViaGoogle()">
         <img src="/assets/icons/icons8-google-96.png" alt="Google" height="24" />
         <span>Sign in via Google</span>
       </button>
     </div>
     <div class="d-flex justify-content-center mt-3">or</div>
+    <div class="alert alert-success" *ngIf="isRegistrationSuccess">
+      Registration successful! Please log in with your new account.
+    </div>
+    <div class="alert alert-danger mt-2" *ngIf="isLoginError">
+      Wrong username or password. Please try again.
+    </div>
     <div class="row mt-3">
       <div class="col d-flex flex-column">
         <label for="">Username or email</label>
-        <input type="text" />
+        <input formControlName="email" type="text" />
       </div>
     </div>
 
     <div class="row mt-3">
       <div class="col d-flex flex-column">
         <label for="">Password</label>
-        <input type="password" />
+        <input formControlName="password" type="password" />
       </div>
     </div>
 
@@ -30,7 +35,10 @@
       <a>Reset your password</a>
     </label>
 
-    <button class="btn btn-info mt-3">Log in</button>
+    <button class="btn btn-info mt-3" [disabled]="isLoggingIn" (click)="login()">
+      <i class="fa fa-spin fa-spinner me-2" *ngIf="isLoggingIn"></i>
+      Log in
+    </button>
     <label class="mt-5">
       Don't have an account?
       <a [routerLink]="['/register']">Register</a>
@@ -40,5 +48,5 @@
       By signing up, you accept our
       <a (click)="openTermsConditionModal()">Terms and Conditions</a>
     </small>
-  </div>
+  </form>
 </div>

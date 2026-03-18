@@ -1,9 +1,11 @@
 <div class="khc-portal">
   @if (portalNavbarService.isVisibleNavbar) {
+    <app-navbar [isMobile]="isMobile"></app-navbar>
   }
   <div class="khc-portal__content">
     @if (!isMobile && portalNavbarService.isVisibleSidebar) {
       <div class="khc-portal__sidebar">
+        <app-sidebar></app-sidebar>
       </div>
     }
 

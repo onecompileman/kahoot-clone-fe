@@ -1,0 +1,76 @@
+@import "config";
+
+.#{$style-prefix}-game-screen {
+	min-height: calc(100vh - 40px);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: $violet;
+	position: relative;
+	padding: 20px;
+	color: $white;
+	overflow: hidden;
+
+	&__podium-container {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		width: 100%;
+		height: calc(100vh - 80px);
+	}
+
+	button.close {
+		border-radius: 100%;
+		width: 42px;
+		height: 42px;
+	}
+
+	&__podium {
+		width: 200px;
+		height: 200px;
+		background-color: $info;
+		box-shadow: 4px 4px 4px black;
+		display: flex;
+		padding-top: 20px;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+
+		&:nth-child(1) {
+			height: 50vh;
+			background-color: darken($info, 15%) !important;
+		}
+		&:nth-child(2) {
+			height: 60vh;
+			background-color: darken($info, 25%) !important;
+		}
+		&:nth-child(3) {
+			height: 40vh;
+			background-color: darken($info, 10%) !important;
+		}
+
+		&-name {
+			font-size: 18px;
+			font-weight: bold;
+			position: absolute;
+			color: $white;
+			top: -50px;
+		}
+	}
+
+	&__user-rank {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding: 20px;
+		align-items: center;
+		background-color: $white;
+		bottom: 10vh;
+		color: #000;
+	}
+}

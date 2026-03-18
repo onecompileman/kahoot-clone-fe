@@ -2,32 +2,81 @@
   <div class="d-flex">
     <a [routerLink]="['/']" class="btn btn-secondary khc-register__back">Back</a>
   </div>
-  <div class="khc-register__register-card">
-    <span class="khc-register__register-card-title">Register</span>
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="khc-register__register-card">
+      <span class="khc-register__register-card-title">Register</span>
 
-    <div class="d-flex mt-4">
-      <button class="btn btn-secondary w-100">
-        <img src="/assets/icons/icons8-google-96.png" alt="Google" height="24" />
-        <span>Sign in via Google</span>
-      </button>
-    </div>
-    <div class="d-flex justify-content-center mt-3">or</div>
-    <div class="row mt-1">
-      <div class="col d-flex flex-column">
-        <label for="">Email</label>
-        <input type="text" />
+      <div class="d-flex mt-4">
+        <button class="btn btn-secondary w-100">
+          <img src="/assets/icons/icons8-google-96.png" alt="Google" height="24" />
+          <span>Sign in via Google</span>
+        </button>
       </div>
-    </div>
+      <div class="d-flex justify-content-center mt-3">or</div>
 
-    <button class="btn btn-info mt-4">Continue</button>
-    <label class="mt-3">
-      Already have an account?
-      <a [routerLink]="['/login']">Login</a>
-    </label>
+      <div class="alert alert-danger" *ngIf="registerErrorMessage">{{ registerErrorMessage }}</div>
+      <div class="row mt-3">
+        <div class="col d-flex flex-column">
+          <label for="">Email</label>
+          <input type="email" formControlName="email" />
+          <small
+            class="text-danger"
+            *ngIf="fC('email')?.invalid && (fC('email')?.touched || fC('email')?.dirty)"
+          >
+            <span *ngIf="fC('email')?.errors?.['required']">Email is required.</span>
+            <span *ngIf="fC('email')?.errors?.['email']">Please enter a valid email address.</span>
+          </small>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col d-flex flex-column">
+          <label for="">Password</label>
+          <input type="password" formControlName="password" />
 
-    <small class="mt-2 text-muted">
-      By signing up, you accept our
-      <a (click)="openTermsConditionModal()">Terms and Conditions</a>
-    </small>
-  </div>
+          <small class="text-danger" *ngIf="isPasswordRuleInvalid('required')">
+            Password is required.
+          </small>
+          <small class="text-danger" *ngIf="isPasswordRuleInvalid('minlength')">
+            Password must be at least 8 characters.
+          </small>
+          <small class="text-danger" *ngIf="isPasswordRuleInvalid('maxlength')">
+            Password must not exceed 128 characters.
+          </small>
+          <small class="text-danger" *ngIf="isPasswordRuleInvalid('missingDigit')">
+            Password must contain at least one digit.
+          </small>
+          <small class="text-danger" *ngIf="isPasswordRuleInvalid('missingLowercase')">
+            Password must contain at least one lowercase letter.
+          </small>
+          <small class="text-danger" *ngIf="isPasswordRuleInvalid('missingUppercase')">
+            Password must contain at least one uppercase letter.
+          </small>
+          <small class="text-danger" *ngIf="isPasswordRuleInvalid('missingSpecialChar')">
+            Password must contain at least one non-alphanumeric character.
+          </small>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col d-flex flex-column">
+          <label for="">Confirm Password</label>
+          <input type="password" formControlName="confirmPassword" />
+          <small class="text-danger" *ngIf="isPasswordMismatch">
+            Password and confirm password do not match.
+          </small>
+        </div>
+      </div>
+
+      <button class="btn btn-info mt-4" [disabled]="isRegistering" (click)="register()">
+        <i class="fa fa-spin fa-spinner me-2" *ngIf="isRegistering"></i>
+        Register
+      </button>
+      <span class="mt-3">
+        Already have an account?
+        <a [routerLink]="['/login']">Login</a>
+      </span>
+
+      <small class="mt-3 text-muted">
+        By signing up, you accept our
+        <a (click)="openTermsConditionModal()">Terms and Conditions</a>
+      </small>
+  </form>
 </div>

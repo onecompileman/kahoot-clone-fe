@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PublicModule } from './pages/public/public.module';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -10,6 +11,8 @@ export const routes: Routes = [
     children: [
       {
         path: 'portal',
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
         loadChildren: () => import('./pages/portal/portal.module').then((m) => m.PortalModule),
       },
       {

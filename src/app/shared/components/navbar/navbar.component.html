@@ -44,7 +44,7 @@
     } @else {
     <div class="btn-group" dropdown placement="bottom" container="body">
       <div id="button-animated" dropdownToggle type="button" aria-controls="dropdown-animated">
-        <div class="khc-navbar__user-profile">SV</div>
+        <div class="khc-navbar__user-profile">{{ userInitials }}</div>
       </div>
       <ul
         id="dropdown-animated"
@@ -54,7 +54,7 @@
         aria-labelledby="button-animated"
       >
         <li role="menuitem"><a class="dropdown-item" href="#">Profile</a></li>
-        <li role="menuitem"><a class="dropdown-item" href="#">Logout</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
       </ul>
     </div>
     }

@@ -1,7 +1,54 @@
+input,
+select {
+  font-size: 18px;
+  height: 42px;
+  border: 1px solid black;
+  text-align: center;
+}
 
-input, select {
-    font-size: 18px;
-    height: 42px;
-    border: 2px solid black;
-    text-align: center;
+input.ng-invalid.ng-touched {
+  border-color: $danger;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    border: 4px solid #000;
+    background: $bg1;
+    box-shadow: 2px 2px 0 #000;
+    position: relative;
+    transition: background 0.2s ease;
+
+    &:checked {
+      background: #00ff90; // Neon green hover
+    }
+
+    &:checked::after {
+      content: "✓";
+      position: absolute;
+      top: -2px;
+      left: 5px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    &:hover {
+    }
+  }
+
+  label {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
 }

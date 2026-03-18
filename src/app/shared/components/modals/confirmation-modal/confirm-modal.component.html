@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h5 class="modal-title">Are you sure?</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.hide()"></button>
+</div>
+<div class="modal-body">
+  <p>{{ message }}</p>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="modalRef.hide()">Cancel</button>
+  <button class="btn btn-primary" [disabled]="isConfirming" (click)="confirm()">
+    <i class="fa fa-spin fa-spinner me-2" *ngIf="isConfirming"></i> 
+    Confirm
+  </button>
+</div>

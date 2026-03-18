@@ -1,0 +1,24 @@
+
+
+h1 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  font-size: 20px !important;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 16px !important;
+}
+section {
+  margin-bottom: 20px;
+}
+p {
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}

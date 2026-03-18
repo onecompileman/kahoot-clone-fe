@@ -16,8 +16,8 @@
 
   &:hover {
     background-color: $white !important;
-    color: $foreground;
-    border-color: $foreground;
+    border-color: $primary;
+    color: $primary;
   }
 }
 
@@ -27,9 +27,10 @@
   border-color: $foreground;
   transition: 0.2s linear;
 
-  &:hover {
-    background-color: $info !important;
-    color: $white;
+   &:hover {
+    background-color: $white !important;
+    border-color: $foreground;
+    color: $foreground;
   }
 }
 
@@ -41,7 +42,8 @@
 
   &:hover {
     background-color: $white !important;
-    color: $foreground;
+    border-color: $pink;
+    color: $pink;
   }
 }
 
@@ -53,7 +55,8 @@
 
   &:hover {
     background-color: $white !important;
-    color: $foreground;
+    border-color: $success;
+    color: $success;
   }
 }
 
